@@ -9,7 +9,7 @@ import {
   getTrendingProducts,
   getSizeRecommendation,
   updateUserPreferences 
-} from '../services/RecommendationService';
+} from '../utils/recommendation';
 
 const Chatbot = ({ products, onProductRecommend, cartItems, wishlistItems, userProfile, handlers }) => {
   const [messages, setMessages] = useState([
@@ -895,4 +895,4 @@ const Chatbot = ({ products, onProductRecommend, cartItems, wishlistItems, userP
   );
 };
 
-export default Chatbot; 
+export default Chatbot;

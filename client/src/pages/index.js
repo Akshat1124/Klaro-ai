@@ -1,8 +1,8 @@
 export { default as Homepage } from './Homepage';
 export { default as Shop } from './Shop';
-export { default as Wishlist } from './wishlist';
-export { default as Cart } from './cart';
-export { default as Profile } from './profile';
+export { default as Wishlist } from './Wishlist';
+export { default as Cart } from './Cart';
+export { default as Profile } from './Profile';
 export { default as AllProducts } from './AllProducts';
 export { default as Login } from './Login';
 export { default as About } from './About';
@@ -15,4 +15,4 @@ export { default as Api } from './Api';
 export { default as Signup } from './Signup';
 export { default as Checkout } from './Checkout';
 export { default as ProductDescription } from './ProductDescription';
-export { default as MensProducts } from './MensProducts'; 
+export { default as MensProducts } from './MensProducts';

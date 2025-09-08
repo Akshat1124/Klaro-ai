@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import ScrollZoomVideo from "../components/scrollZoom";
-import Footer from "../components/footer";
+import ScrollZoomVideo from "../components/ScrollZoom";
+import Footer from "../components/Footer";
 
 
 const containerVariants = {
@@ -1099,4 +1099,4 @@ export default function Homepage() {
     </div>
   );
 }
-  
+
