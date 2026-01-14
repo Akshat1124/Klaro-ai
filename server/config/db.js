@@ -1,18 +1,27 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const connectDB = async () => {
-  const MONGO_URI = process.env.MONGO_URI;
-  if (!MONGO_URI) throw new Error('MONGO_URI not set');
   try {
-    await mongoose.connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log('MongoDB connected');
-  } catch (err) {
-    console.error('MongoDB connection error:', err.message);
-    process.exit(1);
+    if (!process.env.MONGO_URI) {
+      throw new Error("MONGO_URI is not defined");
+    }
+
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.error("MongoDB connection failed:", error.message);
+    process.exit(1); // fail fast
   }
 };
 
-module.exports = connectDB;
+const disconnectDB = async () => {
+  try {
+    await mongoose.connection.close();
+    console.log("MongoDB disconnected");
+  } catch (error) {
+    console.error("MongoDB disconnect error:", error.message);
+  }
+};
+
+module.exports = { connectDB, disconnectDB };
